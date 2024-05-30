@@ -1,0 +1,32 @@
+Apuntes ORACLE
+
+Modificar el archivo php.ini para habilitar el uso de ORACLE
+
+Reiniciar el servidor
+
+// Datos de conexión
+    $db_user = '';     // Usuario de la base de datos
+    $db_password = ''; // Contraseña del usuario
+    $db_connection_string = 'localhost/XE'; // Cadena de conexión a la base de datos (puede ser un TNSNAMES o una cadena de conexión directa)
+
+    echo $db_user;
+    echo $db_password;
+    echo $db_connection_string;
+
+    if (function_exists('oci_connect')) {
+        echo "La extensión OCI8 está habilitada.";
+    } else {
+        echo "La extensión OCI8 no está habilitada.";
+    }
+
+===================================================
+
+AUTO_INCREMENT en Oracle
+
+CREATE SEQUENCE secuencia_id
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+ALTER TABLE ATC_LECTURA MODIFY (id NUMBER);
